@@ -22,11 +22,15 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long roomId;
+    @Column (unique = true)
+    private String bookingRef;
     private LocalDateTime checkIn;
+    private String emailOfGuest;
     private LocalDateTime checkOut;
     private BigDecimal price;
     private Boolean pay;
     private Long userId;
+    private String registerChannel;
     @OneToMany
     private List<Guest> guestList;
     @CreationTimestamp
